@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
+import {map} from "rxjs/operators";
+import {Observable} from "rxjs";
 
 import {Opening} from "../pipe/opening";
-import {Observable} from "rxjs";
-import * as Http from "http";
 
 @Injectable()
 export class OpeningService {
@@ -18,7 +18,6 @@ export class OpeningService {
    */
   getOpenings(): Observable<Opening[]> {
     return this.http.get('app/data/opening.json')
-      .map(res => res.json().data)
-      .catch(res => console.log(res));
+      .pipe(map(res => res.json().data));
   }
 }

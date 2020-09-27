@@ -16,16 +16,11 @@ export class MyFilterPipe implements PipeTransform {
   }
 
 
-
-  applyFilter(book: Opening, filter: Opening): boolean {
+  applyFilter(opening: Opening, filter: Opening): boolean {
     for (let field in filter) {
       if (filter[field]) {
         if (typeof filter[field] === 'string') {
-          if (book[field].toLowerCase().indexOf(filter[field].toLowerCase()) === -1) {
-            return false;
-          }
-        } else if (typeof filter[field] === 'number') {
-          if (book[field] !== filter[field]) {
+          if (opening[field].toLowerCase().indexOf(filter[field].toLowerCase()) === -1) {
             return false;
           }
         }
