@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import 'rxjs/add/operator/catch';
-import {map} from "rxjs/operators";
-import {Observable} from "rxjs";
+import {Observable, throwError} from "rxjs";
 
 import {Opening} from "../pipe/opening";
+import {catchError, map} from "rxjs/operators";
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class OpeningService {
   constructor(private http: Http) {
   }
+
 
   /**
    * Load books from the static books.json data, usually an API URL.
@@ -17,7 +19,17 @@ export class OpeningService {
    * @return {Observable<Opening[]>} A list of books.
    */
   getOpenings(): Observable<Opening[]> {
-    return this.http.get('app/data/opening.json')
-      .pipe(map(res => res.json().data));
+    return this.http.get('./assets/opening.json')
+      .pipe(
+      map(value => value.json().data),
+      catchError(this.handleErrorObservable)
+    );
   }
+
+
+  private handleErrorObservable (error: Response | any)
+  {
+    return throwError(error.message || error);
+  }
+
 }

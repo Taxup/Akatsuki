@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, SimpleChanges} from "@angular/core";
 import {Opening} from "../pipe/opening";
 import {OpeningService} from "../services/opening.service";
 
@@ -12,6 +12,16 @@ export class AudioPlayerComponent {
 
   filter = new Opening()
   openings: Opening[]
+  temp = 0
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
+  }
+
+  ngAfterViewInit() {     console.log(":AfterViewInit");  }
+  ngAfterViewChecked() {  console.log(":AfterViewChecked");  }
+  ngOnDestroy() {    	  console.log(":OnDestroy");  }
+
 
   constructor(private openingService: OpeningService) {
   }

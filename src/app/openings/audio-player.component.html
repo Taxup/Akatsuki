@@ -106,12 +106,17 @@
 <!--  }-->
 <!--</style>-->
 
-<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+<input class="form-control mr-sm-2" type="search" placeholder="Search" (change)="temp=temp+1" #value aria-label="Search">
+
+<h1>Input {{temp}} times changed</h1>
+<p>To make changes click enter</p>
+
 <div *ngFor="let opening of openings">
   <div id="container">
   <div id="disc">{{opening.title}}</div>
   <audio id="sound" src="{{opening.url}}" preload="auto" controls></audio>
   </div>
+  {{openings}}
 </div>
 
 

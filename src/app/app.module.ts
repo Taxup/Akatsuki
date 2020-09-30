@@ -1,6 +1,6 @@
 import {BrowserModule, Title} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import {HttpModule, JsonpModule} from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,7 @@ import {AudioPlayerComponent} from "./openings/audio-player.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {FormsModule} from "@angular/forms";
 import {MyFilterPipe} from "./pipe/my-filter.pipe";
+import {OpeningService} from "./services/opening.service";
 
 @NgModule({
   declarations: [
@@ -27,9 +28,10 @@ import {MyFilterPipe} from "./pipe/my-filter.pipe";
         BrowserModule,
         AppRoutingModule,
         FormsModule,
-        HttpModule
+        HttpModule,
+        JsonpModule
     ],
-  providers: [Title],
+  providers: [Title, OpeningService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

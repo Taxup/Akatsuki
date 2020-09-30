@@ -13,5 +13,11 @@
     {
       "path": "./tsconfig.spec.json"
     }
-]
+],
+  "baseUrl": ".",
+  "paths": {
+    "opening.json": [
+      "/app/assets/opening.json"
+    ]
+  }
 }
