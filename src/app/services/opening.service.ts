@@ -18,16 +18,16 @@ export class OpeningService {
    *
    * @return {Observable<Opening[]>} A list of books.
    */
-  getOpenings(): Observable<Opening[]> {
+  getOpenings(): Observable<any[]> {
     return this.http.get('./assets/opening.json')
       .pipe(
       map(value => value.json().data),
-      catchError(this.handleErrorObservable)
+      catchError(OpeningService.handleErrorObservable)
     );
   }
 
 
-  private handleErrorObservable (error: Response | any)
+  private static handleErrorObservable (error: Response | any)
   {
     return throwError(error.message || error);
   }

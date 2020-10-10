@@ -15,14 +15,14 @@ import {OpeningsComponent} from "./openings/openings.component";
 import {AudioPlayerComponent} from "./openings/audio-player.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {FormsModule} from "@angular/forms";
-import {MyFilterPipe} from "./pipe/my-filter.pipe";
 import {OpeningService} from "./services/opening.service";
+import {SearchFilterPipe} from "./pipe/my-filter.pipe";
 
 @NgModule({
   declarations: [
     AppComponent, HeaderComponent, FooterComponent, PlayerComponent,
     AnimeComponent, HomeComponent, MangaComponent, MangaReaderComponent,
-    OpeningsComponent, AudioPlayerComponent, ProfileComponent, MyFilterPipe
+    OpeningsComponent, AudioPlayerComponent, ProfileComponent, SearchFilterPipe
   ],
     imports: [
         BrowserModule,

@@ -1,3 +1,45 @@
-<div class="embed-responsive embed-responsive-21by9">
-  <iframe class="embed-responsive-item" src="https://hdd2.anipower.ru/Deca-Dence/1.mp4" allowfullscreen></iframe>
+<style type="text/css">
+  .div725auto {
+    width: 725px;
+    margin: auto;
+  }
+  .div725auto button {
+    font-size: 1.35rem;
+  }
+</style>
+<div *ngFor="let anime of naruto">
+  <div *ngIf="anime.id==i" class="div725auto">
+    <!--  <iframe class="embed-responsive-item" src="https://hdd2.anipower.ru/Deca-Dence/1.mp4" allowfullscreen></iframe>-->
+    <h2 style="text-align:center; background: whitesmoke; border: darkgray 1px solid">Naruto {{i}} серия</h2>
+    <video
+      id="my-player"
+      class="video-js"
+      height="408"
+      width="725"
+      controls
+      preload="auto"
+      data-setup='{}'>
+      <source src="{{anime.url}}" type="video/mp4">
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a web browser that
+        <a href="http://videojs.com/html5-video-support/" target="_blank">
+          supports HTML5 video
+        </a>
+      </p>
+    </video>
+
+  </div>
 </div>
+
+<div class="div725auto">
+  <input type="range" min="1" max="{{naruto.length}}" [(ngModel)]="i">
+</div>
+<div class="btn-group" style="width: 100%;">
+  <div class="div725auto">
+    <button class="btn btn-success" *ngIf="i>1" (click)="i=i-1">{{i - 1}} серия</button>
+    <button class="btn btn-success float-right" *ngIf="i<naruto.length" (click)="i=i+1">{{i + 1}} серия</button>
+  </div>
+</div>
+
+<link href="//vjs.zencdn.net/7.0/video-js.min.css" rel="stylesheet">
+<script src="//vjs.zencdn.net/7.0/video.min.js"></script>

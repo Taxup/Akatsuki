@@ -1,7 +1,7 @@
-import {Component, Input, OnChanges, SimpleChanges} from "@angular/core";
+import {Component, Input} from "@angular/core";
 
 @Component({
-  selector: 'header',
+  selector: 'app-header',
   templateUrl: './header.component.html'
 })
 
@@ -12,7 +12,5 @@ export class HeaderComponent {
   @Input() isActiveManga
   @Input() isActiveOpenings
   @Input() isActiveProfile
-
-  @Input() i
 
 }

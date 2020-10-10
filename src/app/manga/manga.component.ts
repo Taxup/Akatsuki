@@ -3,9 +3,9 @@ import {Component} from "@angular/core";
 @Component({
   selector: 'manga',
   template:
-    '<header [isActiveManga]="isActiveManga"></header>' +
+    '<app-header [isActiveManga]="isActiveManga"></app-header>' +
     '<manga-reader></manga-reader>' +
-    '<foot></foot>'
+    '<app-footer></app-footer>'
 })
 
 export class MangaComponent {

@@ -106,26 +106,22 @@
 <!--  }-->
 <!--</style>-->
 
-<input class="form-control mr-sm-2" type="search" placeholder="Search" (change)="temp=temp+1" #value aria-label="Search">
+<input class="form-control mr-sm-2" type="search" placeholder="Search" [(ngModel)]="filter" aria-label="Search">
 
-<h1>Input {{temp}} times changed</h1>
-<p>To make changes click enter</p>
-
-<div *ngFor="let opening of openings">
+<div *ngFor="let opening of tempOpenings | searchFilter: filter">
   <div id="container">
-  <div id="disc">{{opening.title}}</div>
-  <audio id="sound" src="{{opening.url}}" preload="auto" controls></audio>
+    <div id="disc">{{opening.title}}</div>
+    <audio id="sound" src="{{opening.url}}" preload="auto" controls></audio>
   </div>
   {{openings}}
 </div>
 
 
-<script>
-  var audio = $("#sound")[0];
-  $("#container").mouseenter(function() {
-    audio.play();
-  }).mouseleave(function() {
-    audio.pause();
-  });
-
-</script>
+<!--<script>-->
+<!--  var audio = $("#sound")[0];-->
+<!--  $("#container").mouseenter(function() {-->
+<!--    audio.play();-->
+<!--  }).mouseleave(function() {-->
+<!--    audio.pause();-->
+<!--  });-->
+<!--</script>-->

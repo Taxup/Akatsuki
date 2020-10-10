@@ -1,0 +1,10 @@
+<app-header [isActiveProfile]="isActiveProfile"></app-header>
+
+<div class="btn-group" [ngStyle]="{'font-size': '16px', 'font-family': '-apple-system,system-ui,BlinkMacSystemFont,`Segoe UI`,Roboto' }">
+  <button is="button" class="btn btn-block btn btn-success">
+    Оформить подписку за {{subscriptionCost | currency:'USD': 'symbol-narrow'}}
+  </button>
+  <div class="btn success button-return">Не сейчас</div>
+</div>
+
+<app-footer></app-footer>

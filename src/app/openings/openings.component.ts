@@ -3,9 +3,9 @@ import {Component} from "@angular/core";
 @Component({
   selector: 'openings',
   template:
-    '<header [isActiveOpenings]="isActiveOpenings"></header>' +
+    '<app-header [isActiveOpenings]="isActiveOpenings"></app-header>' +
     '<audio-player></audio-player>' +
-    '<foot></foot>'
+    '<app-footer></app-footer>'
 })
 
 export class OpeningsComponent {

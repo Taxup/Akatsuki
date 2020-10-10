@@ -1,42 +1,14 @@
-import {
-  AfterContentChecked, AfterContentInit,
-  AfterViewChecked,
-  AfterViewInit,
-  Component,
-  DoCheck,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  SimpleChanges
-} from "@angular/core";
+import {Component} from "@angular/core";
 
 @Component({
   selector: 'home',
   template:
-    '<header [isActiveHome]="isActiveHome" [i]="i"></header>' +
+    '<app-header [isActiveHome]="isActiveHome"></app-header>' +
     '<div>Home page</div>' +
-    '<button (click)="onClickButton()">add 1 to brand</button>' +
-    '<foot></foot>'
+    '<app-footer></app-footer>'
 })
 
-export class HomeComponent implements OnChanges, OnInit, AfterViewInit, AfterViewChecked, OnDestroy {
+export class HomeComponent {
   title = 'Home'
   isActiveHome = 'active'
-
-  i = 0
-
-  onClickButton() {
-    this.i++
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes)
-  }
-
-  ngOnInit() {    		  console.log(":OnInit");  }
-  ngAfterViewInit() {     console.log(":AfterViewInit");  }
-  ngAfterViewChecked() {  console.log(":AfterViewChecked");  }
-  ngOnDestroy() {    	  console.log(":OnDestroy");  }
-
-
 }

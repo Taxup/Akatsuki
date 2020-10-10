@@ -1,11 +1,10 @@
 import {Component} from "@angular/core";
 
 @Component({
-  selector: 'foot',
+  selector: 'app-footer',
   templateUrl: './footer.component.html'
 })
 
 export class FooterComponent{
-
-  ngOnInit() {    		  console.log("Footer:OnInit");  }
+  currentDate = Date.now()
 }
