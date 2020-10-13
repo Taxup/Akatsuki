@@ -1,1 +1,40 @@
-<img src="https://mangabook.org/uploads/manga/demon-s-sweetheart/chapters/v1-ch1/001.jpg" alt="manga">
+<!--<img src="https://mangabook.org/uploads/manga/demon-s-sweetheart/chapters/v1-ch1/001.jpg" alt="manga">-->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">All Naruto mangas</h1>
+    <p class="lead">You can find all of Naruto and Boruto's manga here. More manga will be added later.</p>
+  </div>
+</div>
+
+<div class="album py-5 bg-light">
+  <div class="container">
+
+
+    <div class="row">
+
+      <div class="col-md-4"  *ngFor="let manga of mangas">
+        <div class="card mb-4 shadow-sm">
+
+<!--          <h5 class="card-header">{{manga.title}}</h5>-->
+          <img class="card-img-top"
+               data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+               alt="Thumbnail [100%x225]"
+               src="{{manga.img}}"
+               data-holder-rendered="true">
+
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-danger">Read</button>
+                <a href="{{manga.url}}">
+                  <button type="button" class="btn btn-sm btn-outline-success">Download</button>
+                </a>
+              </div>
+              <small class="text-muted">{{manga.id}} глава</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HeaderComponent} from "./shared/header.component";
 import {FooterComponent} from "./shared/footer.component";
-import {PlayerComponent} from "./anime/player.component";
+import {AfterIfDirective, PlayerComponent} from "./anime/player.component";
 import {AnimeComponent} from "./anime/anime.component";
 import {HomeComponent} from "./home/home.component";
 import {MangaComponent} from "./manga/manga.component";
@@ -22,7 +22,8 @@ import {SearchFilterPipe} from "./pipe/my-filter.pipe";
   declarations: [
     AppComponent, HeaderComponent, FooterComponent, PlayerComponent,
     AnimeComponent, HomeComponent, MangaComponent, MangaReaderComponent,
-    OpeningsComponent, AudioPlayerComponent, ProfileComponent, SearchFilterPipe
+    OpeningsComponent, AudioPlayerComponent, ProfileComponent, SearchFilterPipe,
+    AfterIfDirective
   ],
     imports: [
         BrowserModule,
