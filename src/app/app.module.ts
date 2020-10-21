@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HeaderComponent} from "./shared/header.component";
 import {FooterComponent} from "./shared/footer.component";
-import {AfterIfDirective, PlayerComponent} from "./anime/player.component";
+import {AfterIfDirective, AnimeContentComponent} from "./anime/anime-content.component";
 import {AnimeComponent} from "./anime/anime.component";
 import {HomeComponent} from "./home/home.component";
 import {MangaComponent} from "./manga/manga.component";
@@ -17,13 +17,17 @@ import {ProfileComponent} from "./profile/profile.component";
 import {FormsModule} from "@angular/forms";
 import {OpeningService} from "./services/opening.service";
 import {SearchFilterPipe} from "./pipe/my-filter.pipe";
+import {AnimeVideoUrlsService} from "./services/anime-video-urls.service";
+import {VideoPlayerComponent} from "./anime/video-player.component";
+import {LogService} from "./services/log.service";
+import {MangaService} from "./services/manga.service";
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent, FooterComponent, PlayerComponent,
+    AppComponent, HeaderComponent, FooterComponent, AnimeContentComponent,
     AnimeComponent, HomeComponent, MangaComponent, MangaReaderComponent,
     OpeningsComponent, AudioPlayerComponent, ProfileComponent, SearchFilterPipe,
-    AfterIfDirective
+    AfterIfDirective, VideoPlayerComponent
   ],
     imports: [
         BrowserModule,
@@ -32,7 +36,7 @@ import {SearchFilterPipe} from "./pipe/my-filter.pipe";
         HttpModule,
         JsonpModule
     ],
-  providers: [Title, OpeningService],
+  providers: [Title, OpeningService, AnimeVideoUrlsService, MangaService, LogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

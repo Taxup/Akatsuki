@@ -10,45 +10,46 @@
 <app-header [isActiveHome]="isActiveHome"></app-header>
 
 <div class="jumbotron">
-<!--  <h1 class="display-5 text-center">Hello, friend!</h1>-->
+  <!--  <h1 class="display-5 text-center">Hello, friend!</h1>-->
   <div class="container">
 
-<!--  <p class="lead">Anime lovers always lack high quality online viewing and naturally choose something similar to the one they like. Now it won't bother you. Akatsuki offers to watch your favorite anime in good quality, add to your bookmarks and will remember for you which series you have chosen. You can find similar series using tags and a special block. Happy viewing!</p>-->
+    <!--  <p class="lead">Anime lovers always lack high quality online viewing and naturally choose something similar to the one they like. Now it won't bother you. Akatsuki offers to watch your favorite anime in good quality, add to your bookmarks and will remember for you which series you have chosen. You can find similar series using tags and a special block. Happy viewing!</p>-->
   </div>
 </div>
 
 <div class="content">
 
-<div class="album py-5 bg-light">
-  <div class="container">
+  <div class="album py-5 bg-light">
+    <div class="container">
 
 
-    <div class="row">
+      <div class="row">
 
-      <div class="col-md-4" *ngFor="let title of titles">
-        <div class="card mb-4 shadow-sm">
+        <div class="col-md-4" *ngFor="let title of titles">
+          <div class="card mb-4 shadow-sm">
 
-          <h5 class="card-header" style="background: #ffffff; color: #ee6c09;">{{title.title}}</h5>
+            <h5 class="card-header" style="background: #ffffff; color: #ee6c09;">{{title.title}}</h5>
 
-          <img class="card-img-top"
-               data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-               alt="Thumbnail [100%x225]"
-               src="{{title.img}}"
-               data-holder-rendered="true">
+            <img class="card-img-top"
+                 data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                 alt="Thumbnail [100%x225]"
+                 src="{{title.img}}"
+                 data-holder-rendered="true">
 
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group" style="margin: auto;">
-                <button type="button" class="btn btn-lg btn-outline-success" style="color:#fbc616; border-color: #fbc616;">Watch</button>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="/anime" style="margin: auto;">
+                  <button type="button" class="btn btn-lg btn-outline-success"
+                          style="color:#fbc616; border-color: #fbc616;">Watch
+                  </button>
+                </a>
               </div>
-              <!--              <small class="text-muted">9 mins</small>-->
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 
 <app-footer></app-footer>

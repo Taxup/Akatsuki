@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+import {MangaService} from "../services/manga.service";
 
 @Component({
   selector: 'manga',
@@ -10,16 +11,12 @@ import {Component} from "@angular/core";
 
 export class MangaComponent {
   isActiveManga = 'active'
-  narutoplanet = 'https://narutoplanet.ru/'
-  naruto1to700="/manga/naruto/Naruto_Manga_1-700_Narutoplanet.ru.rar"
   mangas = []
 
+  constructor(private mangaService: MangaService) {}
+
   ngOnInit() {
-    this.mangas.push({title: "Naruto", id: "1-700", url: this.narutoplanet+this.naruto1to700, img: "https://gen.jut.su/templates/school/images/manga_naruto.jpg"})
-    for (let i = 50; i >= 1; i--) {
-      this.mangas.push({title: "Boruto", id: i, url: this.narutoplanet+"manga/boruto/"+i+"_Narutoplanet.ru.zip", img: "https://gen.jut.su/templates/school/images/manga_boruto.jpg"})
-    }
+    this.mangas = this.mangaService.getMangaList()
     console.log(this.mangas)
   }
-
 }

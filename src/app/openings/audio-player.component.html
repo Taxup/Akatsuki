@@ -25,7 +25,7 @@
     <br>
     <input class="form-control mr-sm-2" type="search" placeholder="Search" [(ngModel)]="filter" aria-label="Search">
 
-    <div *ngFor="let opening of tempOpenings | searchFilter: filter" style="width: 100%;">
+    <div *ngFor="let opening of openingList | searchFilter: filter" style="width: 100%;">
       <div id="container" style="margin: auto; width: 600px;">
         <div id="disc">{{opening.title}}</div>
         <audio id="sound" src="{{opening.url}}" style="width: 600px;" preload="auto" controls></audio>

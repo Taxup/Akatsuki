@@ -1,0 +1,50 @@
+<link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet"/>
+
+<div class="content">
+
+  <div class="main wrapper z_fix">
+    <br>
+    <div class="input-group mb-0">
+      <input type="text" class="form-control ml-4 mr-4" placeholder="Search for anime" (change)="selectTitle(temp)"
+             [(ngModel)]="temp" list="titles"
+             aria-label="Search">
+    </div>
+
+    <datalist id="titles">
+      <list *ngFor="let item of animeTitles">
+        <option value="{{item.title}}"></option>
+      </list>
+    </datalist>
+
+    <div class="header-block">
+      <h1 class="header">{{choice}} {{anime.id}} серия</h1>
+    </div>
+
+    <div id="video-player" class="block-725-width border_around_video no-top-right-border">
+      <video-player [anime]="anime"></video-player>
+    </div>
+
+    <div class="block-725-width mt-2 mb-2">
+<!--      <input type=number min="1" style="border: none; border-bottom: 1px solid dodgerblue; margin-right: 15px;"-->
+<!--             width="10px" max="{{animeEpisodesList.length-1}}" (change)="selectEpisode(i)" [(ngModel)]="i"-->
+<!--             aria-label="episodeID">-->
+      <input type=range min="0" max="{{animeEpisodesList.length-1}}" (change)="selectEpisode(i)" [(ngModel)]="i"
+             aria-label="episodeID">
+    </div>
+    <div class="btn-group mb-5" style="width: 100%;">
+      <div class="block-725-width">
+        <button class="btn btn-sasori" *ngIf="i > 0 || prevEpisode!=null"
+                (click)="selectEpisode(i-1)">{{prevEpisode}} серия
+        </button>
+        <button class="btn btn-sasori float-right" *ngIf="i < animeEpisodesList.length-1 || nextEpisode!=null"
+                (click)="selectEpisode(i+1)">{{nextEpisode}} серия
+        </button>
+      </div>
+    </div>
+
+    <app-footer></app-footer>
+  </div>
+</div>
+
+
+<script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
