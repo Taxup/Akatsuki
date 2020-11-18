@@ -11,19 +11,22 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item {{isActiveHome}}">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item {{isActiveAnime}}">
-        <a class="nav-link" href="/anime">Anime</a>
+        <a class="nav-link" routerLink="/anime">Anime</a>
       </li>
-      <li class="nav-item {{isActiveOpenings}}">
-        <a class="nav-link" href="/openings">Music</a>
+      <li class="nav-item {{isActiveMusic}}">
+        <a class="nav-link" routerLink="/music">Music</a>
       </li>
       <li class="nav-item {{isActiveManga}}">
-        <a class="nav-link" href="/manga">Manga</a>
+        <a class="nav-link" routerLink="/manga">Manga</a>
       </li>
       <li class="nav-item {{isActiveProfile}}">
-        <a class="nav-link" href="/profile">Profile</a>
+        <a class="nav-link" routerLink="/profile">Profile</a>
+      </li>
+      <li class="nav-item {{isActiveGallery}}">
+        <a class="nav-link" routerLink="/gallery">Gallery</a>
       </li>
     </ul>
 

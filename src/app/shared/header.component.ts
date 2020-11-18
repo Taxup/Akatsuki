@@ -10,7 +10,8 @@ export class HeaderComponent {
   @Input() isActiveHome
   @Input() isActiveAnime
   @Input() isActiveManga
-  @Input() isActiveOpenings
+  @Input() isActiveMusic
   @Input() isActiveProfile
+  @Input() isActiveGallery
 
 }

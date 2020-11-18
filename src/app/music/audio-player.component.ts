@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {OpeningService} from "../services/opening.service";
+import {MusicService} from "../services/music.service";
 
 @Component({
   selector: 'audio-player',
@@ -14,7 +14,7 @@ export class AudioPlayerComponent {
   // openings: any[]
   openingList = []
 
-  constructor(private openingService: OpeningService) {
+  constructor(private openingService: MusicService) {
   }
 
   ngOnInit() {
