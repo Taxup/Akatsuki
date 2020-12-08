@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {AnimeComponent} from "./anime/anime.component";
-import {HomeComponent} from "./home/home.component";
-import {MangaComponent} from "./manga/manga.component";
-import {MusicComponent} from "./music/music.component";
-import {ProfileComponent} from "./profile/profile.component";
-import {GalleryComponent} from "./gallery/gallery.component";
-import {MusicGuard} from "./music.guard";
-import {ExitProfileGuard} from "./exit-profile.guard";
-import {AdminGuard} from "./admin.guard";
+import {AnimeComponent} from "./components/anime/anime.component";
+import {HomeComponent} from "./components/home/home.component";
+import {MangaComponent} from "./components/manga/manga.component";
+import {MusicComponent} from "./components/music/music.component";
+import {ProfileComponent} from "./components/profile/profile.component";
+import {GalleryComponent} from "./components/gallery/gallery.component";
+import {MusicGuard} from "./guards/music.guard";
+import {ExitProfileGuard} from "./guards/exit-profile.guard";
+import {AdminGuard} from "./guards/admin.guard";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -19,7 +19,7 @@ const routes: Routes = [
   {path: 'gallery', component: GalleryComponent},
   {
     path: 'admin',
-    loadChildren: () => import('./admin-module/admin-module.module').then(m => m.AdminModuleModule),
+    loadChildren: () => import('./components/admin-module/admin-module.module').then(m => m.AdminModuleModule),
     canLoad: [AdminGuard]
   }
 ];

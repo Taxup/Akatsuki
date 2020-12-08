@@ -3,7 +3,9 @@ import { Observable } from 'rxjs';
 import {Injectable} from "@angular/core";
 
 @Injectable()
-export class AnimeImageUrlService {
+export class GalleryService {
+
+  url: string = "http://localhost:3000/pictures"
 
   constructor(private http: HttpClient) {
     this.getJSON().subscribe(data => {
@@ -11,6 +13,6 @@ export class AnimeImageUrlService {
   }
 
   public getJSON(): Observable<any> {
-    return this.http.get("./assets/pictures.json");
+    return this.http.get(this.url);
   }
 }

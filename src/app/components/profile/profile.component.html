@@ -1,0 +1,76 @@
+<app-header [isActiveProfile]="isActiveProfile"></app-header>
+
+<div class="container" style="min-height: 530px">
+  <br><br>
+  <div class="btn-group"
+       [ngStyle]="{'font-size': '16px', 'font-family': '-apple-system,system-ui,BlinkMacSystemFont,`Segoe UI`,Roboto' }">
+    <button is="button" class="btn btn-block btn btn-success">
+      Оформить подписку за {{subscriptionCost | currency:'USD': 'symbol-narrow'}}
+    </button>
+    <div class="btn success button-return">Не сейчас</div>
+  </div>
+  <br><br><br>
+
+  <div *ngIf="registration">
+    <form [formGroup]="registrationForm">
+      <div class="form-group">
+        <label for="exampleInputEmail2">Email address</label>
+        <input formControlName="email" name="something" type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email">
+        <span class="error" *ngIf="emailReg.invalid">
+          email is invalid
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword2">Password</label>
+        <input formControlName="password" name="something" type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" (change)="checkPasswords()">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputConfirmPassword2">Confirm password</label>
+        <input formControlName="passwordConfirm" name="something" type="password" class="form-control" id="exampleInputConfirmPassword2" placeholder="Password" (change)="checkPasswords()">
+        <span class="error" *ngIf="!arePasswordsSame">
+          passwords are not the same
+        </span>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck2">
+        <label class="form-check-label" for="exampleCheck2">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="login()">Registration</button>
+    </form>
+    <br>
+    <div>
+      <a (click)="onClickChangeForm()" style="color: #245164;">login?</a>
+    </div>
+  </div>
+  <div *ngIf="!registration">
+    <form [formGroup]="loginForm">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input formControlName="email" name="something" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <span class="error" *ngIf="emailLogin.invalid">
+          email is invalid
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input formControlName="password" name="something" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="login()">Log in</button>
+    </form>
+    <br>
+    <div>
+      <a (click)="onClickChangeForm()" style="color: #245164">registration?</a>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+<app-footer></app-footer>

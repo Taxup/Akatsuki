@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AnimeImageUrlService} from "../services/anime-image-url.service";
+import {GalleryService} from "../../services/gallery.service";
 
 @Component({
   selector: 'app-gallery',
@@ -10,7 +10,7 @@ export class GalleryComponent implements OnInit {
 
   isActiveGallery = "active";
 
-  constructor(private animeImageUrlService: AnimeImageUrlService) {
+  constructor(private animeImageUrlService: GalleryService) {
   }
   col1: any = []
   col2: any = []
@@ -24,9 +24,9 @@ export class GalleryComponent implements OnInit {
 
   ngOnInit(): void {
     this.animeImageUrlService.getJSON().subscribe(data => {
-      this.endpoints = data[0].endpoints
+      this.endpoints = data
+      console.log(this.endpoints)
       this.selectEndpoint('cry')
-      console.log(data[0].endpoints)
     });
 
   }
